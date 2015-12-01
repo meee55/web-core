@@ -1,4 +1,4 @@
-package com.htche.web.it;
+package com.wang.web.it;
 
 import java.util.Arrays;
 
@@ -19,7 +19,8 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.htche.web.WebCoreMainClass;
+import com.wang.web.it.IntegrationTestBase;
+import com.wang.web.WebCoreMainClass;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = WebCoreMainClass.class)

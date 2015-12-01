@@ -1,10 +1,10 @@
-package com.htche.web.notification.email;
+package com.wang.web.notification.email;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.htche.web.notification.INotifiableExceptionDeliverer;
+import com.wang.web.notification.INotifiableExceptionDeliverer;
 
 public class NotificationDelivererChain {
 	protected @Autowired(required = false) List<INotifiableExceptionDeliverer> notificationDeliverers;

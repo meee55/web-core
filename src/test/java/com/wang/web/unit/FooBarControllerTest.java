@@ -1,4 +1,4 @@
-package com.htche.web.unit;
+package com.wang.web.unit;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -10,8 +10,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.ResultActions;
 
-import com.htche.thread.ThreadTool;
-import com.htche.web.configure.ApplicationCoreConfigure;
+import com.wang.thread.ThreadTool;
+import com.wang.web.unit.ControllerTestBase;
+import com.wang.web.configure.ApplicationCoreConfigure;
 
 @SpringApplicationConfiguration(classes = ApplicationCoreConfigure.class)
 @TestPropertySource(locations = "classpath:config/core.properties")

@@ -1,4 +1,4 @@
-package com.htche.web.notification.email;
+package com.wang.web.notification.email;
 
 import java.util.HashMap;
 import java.util.List;

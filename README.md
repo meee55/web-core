@@ -1,10 +1,10 @@
-所有基于WEB的服务，都必须引用 htche-web-core（以下简称CORE），它封装了 Tomcat 和 SpringMVC 的常用配置，通过maven引用后项目无需添加任何代码就可以启动运行。CORE基于Spring Boot，为应用开发缺省提供了“微服务”框架，极大地降低了业务开发的门槛。
+所有基于WEB的服务，都必须引用 web-core（以下简称CORE），它封装了 Tomcat 和 SpringMVC 的常用配置，通过maven引用后项目无需添加任何代码就可以启动运行。CORE基于Spring Boot，为应用开发缺省提供了“微服务”框架，极大地降低了业务开发的门槛。
 
 # 启动
 
-由于CORE内嵌了Tomcat，因此所有基于CORE 的项目无需发布到Tomcat服务器，就可以以普通应用程序的方式执行，启动类是 com.htche.web.WebCoreMainClass。默认服务端口是8080。打开浏览器可以看到404信息。
+由于CORE内嵌了Tomcat，因此所有基于CORE 的项目无需发布到Tomcat服务器，就可以以普通应用程序的方式执行，启动类是 com.wang.web.WebCoreMainClass。默认服务端口是8080。打开浏览器可以看到404信息。
 
-![Capture](http://git.int.htche.com/framework/htche-web-core/uploads/942e8209fca35bea50635b83f63dda74/Capture.JPG)
+![Capture](Capture.JPG)
 
 # 视图解释
 
@@ -165,7 +165,7 @@ Thymeleaf模版的存放位置位于 /src/main/resources/templates下。
 
 那么CORE将会向 service@htche.com 和 other@htche.com 这两个邮箱发送邮件，标题就会是异常的名称，而内容就会是异常的堆栈信息。例如：
 
-![CORE_ERROR](http://git.int.htche.com/framework/htche-web-core/uploads/20b0617f0f2cc09271e5705e936ba62a/CORE_ERROR.JPG)
+![CORE_ERROR](CORE_ERROR.JPG)
 
 上图我们可以看到，为了便于邮件客户端识别异常邮件，标题被加入和一个[EXCEPTION]前缀，项目可以重新定义这个前缀，这个前缀的配置项是：
 
@@ -180,7 +180,7 @@ Thymeleaf模版的存放位置位于 /src/main/resources/templates下。
 
 关于第一点是因为，考虑到一个系统中可能存在多种不同的异常，他们可能需要被分别发送给不同的关注者，因此我们可能需要定义多个分组。对分组的指定可以是 @ExceptionNotification 的 value，也可以是拦截的方法名称，例如：
 
-    exception.notification.contacts[0]=com.htche.web.core.FooBar.bar;service@htche.com,other@htche.com;nobody
+    exception.notification.contacts[0]=com.wang.web.core.FooBar.bar;service@htche.com,other@htche.com;nobody
 
 如果 @ExceptionNotification 没有指定当前的异常需要被哪个分组接受，那么他会试图寻找一个名为"default"的分组，也就是我们在本例中的这个分组，并将信息发给它。同样通过给于@ExceptionNotification 特定参数，我们不仅可以将异常信息发送给不同的人或群组，还可以解决第二个问题，@ExceptionNotification接受以下参数：
 
@@ -199,9 +199,9 @@ Thymeleaf模版的存放位置位于 /src/main/resources/templates下。
 
 例如：
 
-    @ExceptionNotification(value="group1", subject="This must be pay attention in particular", exceptions="com.htche.exceptions.AuthenticationException")
+    @ExceptionNotification(value="group1", subject="This must be pay attention in particular", exceptions="com.wang.exceptions.AuthenticationException")
 
-以上配置导致 com.htche.exceptions.AuthenticationException 异常只被 group1 下的用户接收到。
+以上配置导致 com.wang.exceptions.AuthenticationException 异常只被 group1 下的用户接收到。
 
 当然，为了保证邮件能够被正常发出，应用需要提供邮件服务器账号，配置项如下：
 
@@ -214,11 +214,11 @@ Thymeleaf模版的存放位置位于 /src/main/resources/templates下。
 	// 口令
 	email.stmp.pass
 
-CORE 中的邮件客户端组件由 htche-utils 项目提供。详情参见htche-utils 项目相关说明文档。
+CORE 中的邮件客户端组件由 utils 项目提供。详情参见utils 项目相关说明文档。
 
 # 线程池
 
-发送邮件通常是一项时间开销非常大的行为，为了避免对业务照成阻塞，CORE通过对 htche-thread的引用，引入了线程池管理。在ApplicationCoreConfigure 的 212 行：
+发送邮件通常是一项时间开销非常大的行为，为了避免对业务照成阻塞，CORE通过对 thread的引用，引入了线程池管理。在ApplicationCoreConfigure 的 212 行：
 
 		protected @Autowired AsyncTaskExecutor asyncTaskExecutor;
 

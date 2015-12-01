@@ -1,4 +1,4 @@
-package com.htche.web.notification.email;
+package com.wang.web.notification.email;
 
 import javax.mail.MessagingException;
 
@@ -6,9 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.htche.utils.mail.Compose;
-import com.htche.utils.mail.MailBroker;
-import com.htche.web.annotation.ExceptionNotification;
+import com.wang.utils.mail.Compose;
+import com.wang.utils.mail.MailBroker;
+import com.wang.web.annotation.ExceptionNotification;
 
 public class NotifiableExceptionEmailAdapter extends AbstractNotifiableExceptionAdapter {
 	final Logger logger = LoggerFactory.getLogger(getClass());

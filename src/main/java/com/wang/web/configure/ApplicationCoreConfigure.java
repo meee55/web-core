@@ -1,4 +1,4 @@
-package com.htche.web.configure;
+package com.wang.web.configure;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -47,14 +47,14 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.TemplateResolver;
 
-import com.htche.thread.configure.ThreadConfig;
-import com.htche.utils.mail.MailBroker;
-import com.htche.utils.mail.MailConfig;
-import com.htche.web.annotation.ExceptionNotification;
-import com.htche.web.notification.INotifiableExceptionDeliverer;
-import com.htche.web.notification.email.ContactBook;
-import com.htche.web.notification.email.NotifiableExceptionEmailAdapter;
-import com.htche.web.notification.email.NotificationDelivererChain;
+import com.wang.utils.mail.MailBroker;
+import com.wang.utils.mail.MailConfig;
+import com.wang.thread.configure.ThreadConfig;
+import com.wang.web.annotation.ExceptionNotification;
+import com.wang.web.notification.INotifiableExceptionDeliverer;
+import com.wang.web.notification.email.ContactBook;
+import com.wang.web.notification.email.NotifiableExceptionEmailAdapter;
+import com.wang.web.notification.email.NotificationDelivererChain;
 
 @Configuration
 @EnableWebMvc

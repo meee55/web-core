@@ -1,30 +1,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.htche</groupId>
-  <artifactId>htche-web-core</artifactId>
-  <version>1.0.2-SNAPSHOT</version>
+  <groupId>com.wang</groupId>
+  <artifactId>web-core</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>htche-web-core</name>
+  <name>web-core</name>
   <url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<junit.version>4.11</junit.version>
+		<!-- <junit.version>4.11</junit.version> -->
 		<spring.version>4.1.6.RELEASE</spring.version>
 		<spring.boot.version>1.2.5.RELEASE</spring.boot.version>
-		<htche-utils.version>2.0.2-SNAPSHOT</htche-utils.version>
-		<htche-thread.version>0.0.1-SNAPSHOT</htche-thread.version>
-		<htche-web-test.version>1.0.2-SNAPSHOT</htche-web-test.version>
+		<utils.version>2.0.2-SNAPSHOT</utils.version>
+		<thread.version>0.0.1-SNAPSHOT</thread.version>
+		<test.version>1.0.0-SNAPSHOT</test.version>
 	</properties>
 
 	<scm>
-	    <connection>scm:git:http://git.int.htche.com/framework/htche-web-core.git</connection>
-	    <developerConnection>scm:git:http://git.int.htche.com/framework/htche-web-core.git</developerConnection>
+	    <connection>scm:git:https://github.com/meee55/web-core.git</connection>
+	    <developerConnection>scm:git:https://github.com/meee55/web-core.git</developerConnection>
 	</scm>
 	
-	<repositories>
+	<!-- <repositories>
 		<repository>
 			<id>maven-releases</id>
 			<name>Maven Release Repository</name>
@@ -35,9 +35,9 @@
 			<name>Maven Snapshot Repository</name>
 			<url>http://mvn.int.htche.com/archiva/repository/snapshots/</url>
 		</repository>
-	</repositories>
+	</repositories> -->
 	
-	<distributionManagement>
+	<!-- <distributionManagement>
 		<repository>
 			<id>maven-releases</id>
 			<name>Maven Release Repository</name>
@@ -48,7 +48,7 @@
 			<name>Maven Snapshot Repository</name>
 			<url>http://mvn.int.htche.com/archiva/repository/snapshots/</url>
 		</snapshotRepository>
-	</distributionManagement>
+	</distributionManagement> -->
 
 	<profiles>
 		<profile>
@@ -109,6 +109,10 @@
 		            <groupId>org.springframework.boot</groupId>
 		            <artifactId>spring-boot-maven-plugin</artifactId>
 		            <version>${spring.boot.version}</version>
+		            <configuration>
+		            	<layer>NONE</layer>
+		            	<skip>true</skip>
+		            </configuration>
 				      <executions>
 				        <execution>
 				          <goals>
@@ -222,17 +226,17 @@
 
 	<dependencies>
 		<!-- Test -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
-		</dependency>
+		</dependency> -->
 		
 		<dependency>
-			<groupId>com.htche.web</groupId>
-			<artifactId>htche-web-test</artifactId>
-			<version>${htche-web-test.version}</version>
+			<groupId>com.wang</groupId>
+			<artifactId>test</artifactId>
+			<version>${test.version}</version>
 			<scope>test</scope>
 		</dependency>
 		
@@ -348,15 +352,15 @@
 		
 		<!-- HTCHE -->
 		<dependency>
-			<groupId>com.htche</groupId>
-			<artifactId>htche-utils</artifactId>
-			<version>${htche-utils.version}</version>
+			<groupId>com.wang</groupId>
+			<artifactId>utils</artifactId>
+			<version>${utils.version}</version>
 		</dependency>
 		
 		<dependency>
-			<groupId>com.htche</groupId>
-			<artifactId>htche-thread</artifactId>
-			<version>${htche-thread.version}</version>
+			<groupId>com.wang</groupId>
+			<artifactId>thread</artifactId>
+			<version>${thread.version}</version>
 		</dependency>
 
 		<dependency>

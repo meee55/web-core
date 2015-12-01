@@ -1,4 +1,4 @@
-package com.htche.web.notification.email;
+package com.wang.web.notification.email;
 
 import java.util.ArrayList;
 import java.util.List;

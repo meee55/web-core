@@ -1,4 +1,4 @@
-package com.htche.web.notification;
+package com.wang.web.notification;
 
 public interface INotifiableExceptionDeliverer {
 	public boolean enabled();

@@ -1,4 +1,4 @@
-package com.htche.web;
+package com.wang.web;
 
 import org.apache.log4j.Logger;
 import org.springframework.boot.SpringApplication;
