@@ -19,7 +19,6 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.wang.web.it.IntegrationTestBase;
 import com.wang.web.WebCoreMainClass;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -39,7 +38,7 @@ public class FooBarControllerIT extends IntegrationTestBase {
 		HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
 
 		ResponseEntity<String> entity = request(testRestTemplate, "http://localhost:" + this.port + "/foo",
-				HttpMethod.GET, requestEntity, String.class, false);
+				HttpMethod.GET, requestEntity, MediaType.ALL, Arrays.asList(MediaType.ALL), String.class, false);
 
 		Assert.assertEquals(HttpStatus.OK, entity.getStatusCode());
 		Assert.assertTrue(entity.getBody().contains("foo"));
@@ -50,7 +49,7 @@ public class FooBarControllerIT extends IntegrationTestBase {
 		TestRestTemplate testRestTemplate = getRestTemplate(null, null);
 
 		ResponseEntity<String> entity = request(testRestTemplate, "http://localhost:" + this.port + "/bar",
-				HttpMethod.GET, null, String.class, false);
+				HttpMethod.GET, null, MediaType.ALL, Arrays.asList(MediaType.ALL), String.class, false);
 		//ResponseEntity<String> entity = new TestRestTemplate().getForEntity("http://localhost:" + this.port + "/bar",
 		//		String.class);
 		Assert.assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, entity.getStatusCode());
