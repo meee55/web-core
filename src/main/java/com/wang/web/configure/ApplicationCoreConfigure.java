@@ -12,15 +12,14 @@ import javax.ws.rs.core.Context;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.Ordered;
 import org.springframework.core.task.AsyncTaskExecutor;
 import org.springframework.http.HttpStatus;
@@ -47,9 +46,9 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.TemplateResolver;
 
+import com.wang.thread.configure.ThreadConfig;
 import com.wang.utils.mail.MailBroker;
 import com.wang.utils.mail.MailConfig;
-import com.wang.thread.configure.ThreadConfig;
 import com.wang.web.annotation.ExceptionNotification;
 import com.wang.web.notification.INotifiableExceptionDeliverer;
 import com.wang.web.notification.email.ContactBook;
@@ -57,10 +56,11 @@ import com.wang.web.notification.email.NotifiableExceptionEmailAdapter;
 import com.wang.web.notification.email.NotificationDelivererChain;
 
 @Configuration
+@EnableAutoConfiguration
 @EnableWebMvc
 @ComponentScan
 @Import(value = { ThreadConfig.class })
-@EnableConfigurationProperties({ PropertySourcesPlaceholderConfigurer.class })
+//@EnableConfigurationProperties({ PropertySourcesPlaceholderConfigurer.class })
 @PropertySource(value = "classpath:config/core.properties")
 public class ApplicationCoreConfigure extends WebMvcConfigurerAdapter {
 	final Logger logger = Logger.getLogger(this.getClass());
