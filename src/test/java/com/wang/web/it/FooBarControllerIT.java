@@ -50,6 +50,7 @@ public class FooBarControllerIT extends IntegrationTestBase {
 
 		ResponseEntity<String> entity = request(testRestTemplate, "http://localhost:" + this.port + "/bar",
 				HttpMethod.GET, null, Arrays.asList(MediaType.ALL), String.class, false);
+
 		//ResponseEntity<String> entity = new TestRestTemplate().getForEntity("http://localhost:" + this.port + "/bar",
 		//		String.class);
 		Assert.assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, entity.getStatusCode());
