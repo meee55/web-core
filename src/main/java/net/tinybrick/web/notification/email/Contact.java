@@ -1,4 +1,4 @@
-package com.wang.web.notification.email;
+package net.tinybrick.web.notification.email;
 
 import java.util.ArrayList;
 import java.util.List;

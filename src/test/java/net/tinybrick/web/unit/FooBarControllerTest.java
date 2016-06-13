@@ -1,4 +1,4 @@
-package com.wang.web.unit;
+package net.tinybrick.web.unit;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -11,7 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.ResultActions;
 
-import com.wang.web.configure.ApplicationCoreConfigure;
+import net.tinybrick.web.configure.ApplicationCoreConfigure;
 
 @SpringApplicationConfiguration(classes = ApplicationCoreConfigure.class)
 @TestPropertySource(locations = "classpath:config/core.properties")

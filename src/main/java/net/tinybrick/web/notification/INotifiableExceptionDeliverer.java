@@ -1,4 +1,4 @@
-package com.wang.web.notification;
+package net.tinybrick.web.notification;
 
 public interface INotifiableExceptionDeliverer {
 	public boolean enabled();

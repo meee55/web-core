@@ -1,4 +1,4 @@
-package com.wang.web.configure;
+package net.tinybrick.web.configure;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -46,14 +46,14 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.TemplateResolver;
 
-import com.wang.thread.configure.ThreadConfig;
-import com.wang.utils.mail.MailBroker;
-import com.wang.utils.mail.MailConfig;
-import com.wang.web.annotation.ExceptionNotification;
-import com.wang.web.notification.INotifiableExceptionDeliverer;
-import com.wang.web.notification.email.ContactBook;
-import com.wang.web.notification.email.NotifiableExceptionEmailAdapter;
-import com.wang.web.notification.email.NotificationDelivererChain;
+import net.tinybrick.thread.configure.ThreadConfig;
+import net.tinybrick.utils.mail.MailBroker;
+import net.tinybrick.utils.mail.MailConfig;
+import net.tinybrick.web.annotation.ExceptionNotification;
+import net.tinybrick.web.notification.INotifiableExceptionDeliverer;
+import net.tinybrick.web.notification.email.ContactBook;
+import net.tinybrick.web.notification.email.NotifiableExceptionEmailAdapter;
+import net.tinybrick.web.notification.email.NotificationDelivererChain;
 
 @Configuration
 @EnableAutoConfiguration

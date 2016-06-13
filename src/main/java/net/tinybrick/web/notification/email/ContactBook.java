@@ -1,4 +1,4 @@
-package com.wang.web.notification.email;
+package net.tinybrick.web.notification.email;
 
 import java.util.HashMap;
 import java.util.List;
