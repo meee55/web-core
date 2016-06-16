@@ -1,10 +1,10 @@
-package com.wang.web.notification.email;
+package net.tinybrick.web.notification.email;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.wang.web.notification.INotifiableExceptionDeliverer;
+import net.tinybrick.web.notification.INotifiableExceptionDeliverer;
 
 public class NotificationDelivererChain {
 	protected @Autowired(required = false) List<INotifiableExceptionDeliverer> notificationDeliverers;

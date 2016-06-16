@@ -1,4 +1,4 @@
-package com.wang.web.it;
+package net.tinybrick.web.it;
 
 import java.util.Arrays;
 
@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 
-import com.wang.web.WebCoreMainClass;
+import net.tinybrick.web.WebCoreMainClass;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = WebCoreMainClass.class)

@@ -1,4 +1,4 @@
-package com.wang.web.notification.email;
+package net.tinybrick.web.notification.email;
 
 import javax.mail.MessagingException;
 
@@ -6,9 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.wang.utils.mail.Compose;
-import com.wang.utils.mail.MailBroker;
-import com.wang.web.annotation.ExceptionNotification;
+import net.tinybrick.utils.mail.Compose;
+import net.tinybrick.utils.mail.MailBroker;
+import net.tinybrick.web.annotation.ExceptionNotification;
 
 public class NotifiableExceptionEmailAdapter extends AbstractNotifiableExceptionAdapter {
 	final Logger logger = LoggerFactory.getLogger(getClass());
@@ -90,10 +90,8 @@ public class NotifiableExceptionEmailAdapter extends AbstractNotifiableException
 	}
 
 	/**
-	 * @param id
 	 * @param troubleMaker
 	 * @param troubleMethod
-	 * @param ex
 	 * @return
 	 */
 	private Contact getContact(String annotationValue, String name, String troubleMaker, String troubleMethod) {

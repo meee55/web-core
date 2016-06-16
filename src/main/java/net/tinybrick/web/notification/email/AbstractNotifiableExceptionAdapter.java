@@ -1,4 +1,4 @@
-package com.wang.web.notification.email;
+package net.tinybrick.web.notification.email;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -9,8 +9,8 @@ import java.util.StringTokenizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.wang.web.annotation.ExceptionNotification;
-import com.wang.web.notification.INotifiableExceptionDeliverer;
+import net.tinybrick.web.annotation.ExceptionNotification;
+import net.tinybrick.web.notification.INotifiableExceptionDeliverer;
 
 public abstract class AbstractNotifiableExceptionAdapter implements INotifiableExceptionDeliverer {
 	final Logger logger = LoggerFactory.getLogger(getClass());
