@@ -1,0 +1,7 @@
+/web-core.iml
+/.idea
+/target/
+
+/.settings
+.project
+.classpath
