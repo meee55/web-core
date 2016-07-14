@@ -2,6 +2,7 @@ package net.tinybrick.web.it;
 
 import java.util.Arrays;
 
+import net.tinybrick.test.web.it.IntegrationTestBase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
